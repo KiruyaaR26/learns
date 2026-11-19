@@ -381,8 +381,6 @@ nav.tab-grid ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  border: 1px solid var(--radova-hairline);
-  background: var(--radova-hairline);
 }
 
 .post-grid > li {
@@ -393,12 +391,12 @@ nav.tab-grid ul {
 .post-row {
   display: grid;
   gap: 1px;
-  background: var(--radova-hairline);
 }
 
 @media (min-width: 768px) {
   .post-row {
     grid-template-columns: 1.25fr 0.75fr;
+    margin-top: 1rem;
   }
 }
 
