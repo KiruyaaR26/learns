@@ -1,0 +1,606 @@
+/* ==========================================================================
+   Radova Learns Page Stylesheet (Compatible with site.css & pico.min.css)
+   ========================================================================== */
+:root {
+  --radova-navy: #0E0347;
+  --radova-blue: #0B2E8D;
+  --radova-red: #A10000;
+  --radova-red-2: #BB080B;
+  --radova-red-3: #DB000F;
+  --radova-lavender: #F7F6FF;
+  --radova-white: #FFFFFF;
+  --radova-muted: #4A4668;
+  --radova-hairline: rgba(14, 3, 71, 0.14);
+  --radova-heading-font: "Roboto", system-ui, -apple-system, sans-serif;
+  --radova-body-font: "Lato", system-ui, -apple-system, sans-serif;
+  --learns-pad-x: clamp(1.25rem, 4vw, 3.5rem);
+}
+
+.learns-container {
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-block: 2.5rem 4rem;
+  padding-inline: var(--learns-pad-x);
+}
+
+/* ---------- Editorial Header ---------- */
+.editorial-header {
+  display: grid;
+  gap: 1rem;
+  padding-bottom: 1.75rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--radova-navy);
+}
+
+.eyebrow {
+  margin: 0 0 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--radova-red);
+}
+
+.editorial-header h1 {
+  margin: 0;
+  font-family: var(--radova-heading-font);
+  font-size: clamp(2.15rem, 4.5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--radova-navy);
+}
+
+.editorial-header > p {
+  margin: 0;
+  font-size: 1.125rem;
+  color: var(--radova-muted);
+}
+
+@media (min-width: 768px) {
+  .editorial-header {
+    grid-template-columns: 1.35fr 0.65fr;
+    align-items: end;
+    gap: 2rem;
+  }
+}
+
+/* ---------- Anchor Navigation Tabs (.tab-grid) ---------- */
+nav.tab-grid {
+  display: block;
+  margin-bottom: 2.5rem;
+}
+
+nav.tab-grid ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--radova-hairline);
+  background: var(--radova-hairline);
+}
+
+@media (min-width: 768px) {
+  nav.tab-grid.tab-grid--four ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.tab-grid li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tab-grid a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 52px;
+  padding: 0.65rem 1rem;
+  border-bottom: 3px solid transparent;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--radova-navy);
+  background: var(--radova-lavender);
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.tab-grid a:hover,
+.tab-grid a:focus-visible,
+.tab-grid a[aria-current="true"],
+.tab-grid a[aria-current="page"] {
+  color: var(--radova-red);
+  background: var(--radova-white);
+  border-bottom-color: var(--radova-red);
+}
+
+/* ---------- Section Banner ---------- */
+.learn-section {
+  margin-top: 3.5rem;
+  scroll-margin-top: 1.5rem;
+}
+
+.section-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--radova-navy);
+}
+
+.section-banner h2 {
+  margin: 0;
+  font-family: var(--radova-heading-font);
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: var(--radova-navy);
+}
+
+.section-note {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--radova-muted);
+}
+
+/* ---------- Buttons ---------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.65rem 1.35rem;
+  border: 1.5px solid var(--radova-red);
+  border-radius: 6px;
+  font-family: var(--radova-body-font);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  color: var(--radova-white);
+  background: var(--radova-red);
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  color: var(--radova-white);
+  background: var(--radova-red-2);
+  border-color: var(--radova-red-2);
+}
+
+.button--navy {
+  color: var(--radova-white);
+  background: var(--radova-navy);
+  border-color: var(--radova-navy);
+}
+
+.button--navy:hover,
+.button--navy:focus-visible {
+  color: var(--radova-white);
+  background: var(--radova-blue);
+  border-color: var(--radova-blue);
+}
+
+.button--outline-navy {
+  color: var(--radova-navy);
+  background: var(--radova-white);
+  border-color: var(--radova-navy);
+}
+
+.button--outline-navy:hover,
+.button--outline-navy:focus-visible {
+  color: var(--radova-white);
+  background: var(--radova-navy);
+  border-color: var(--radova-navy);
+}
+
+/* ---------- Badges ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--radova-white);
+  background: var(--radova-navy);
+}
+
+.badge--type {
+  background: var(--radova-navy);
+}
+
+.badge--severity-critical,
+.badge--severity-high {
+  background: var(--radova-red);
+}
+
+.badge--severity-medium,
+.badge--scheduled {
+  background: var(--radova-blue);
+}
+
+.badge--severity-low {
+  color: var(--radova-navy);
+  background: #E4E1F7;
+}
+
+/* ---------- 1. Tutorial (Arch Wiki Index Style) ---------- */
+.wiki-board {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+}
+
+@media (min-width: 768px) {
+  .wiki-board {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.wiki-cell {
+  padding: 1.75rem;
+  background: var(--radova-white);
+}
+
+.wiki-cell h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--radova-heading-font);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--radova-navy);
+}
+
+.wiki-cell h3 i.ph {
+  color: var(--radova-red);
+}
+
+.wiki-cell > p {
+  font-size: 0.9375rem;
+  color: var(--radova-muted);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.wiki-links {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--radova-hairline);
+}
+
+.wiki-links li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid var(--radova-hairline);
+}
+
+.wiki-links li:last-child {
+  border-bottom: 0;
+}
+
+.wiki-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--radova-navy);
+  transition: color 160ms ease, padding-left 160ms ease;
+}
+
+.wiki-links a::after {
+  content: "\2192";
+  color: var(--radova-red);
+}
+
+.wiki-links a:hover,
+.wiki-links a:focus-visible {
+  color: var(--radova-red);
+  padding-left: 0.35rem;
+}
+
+/* ---------- 2. Course Grid ---------- */
+.course-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  border: 1px solid var(--radova-hairline);
+  background: var(--radova-hairline);
+}
+
+@media (min-width: 1024px) {
+  .course-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 1.75rem;
+  border-radius: 0;
+  background: var(--radova-white);
+}
+
+.course-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.course-card h3 {
+  font-family: var(--radova-heading-font);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.65rem;
+  color: var(--radova-navy);
+}
+
+.course-card > p {
+  font-size: 0.95rem;
+  color: var(--radova-muted);
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.course-card .meta-dl {
+  margin-top: auto;
+  margin-bottom: 1.25rem;
+  border-top: 1px solid var(--radova-hairline);
+}
+
+.course-card__footer .button {
+  width: 100%;
+}
+
+/* ---------- 3 & 4. Post Grid / Bootcamp & Certification Rows ---------- */
+.post-grid {
+  display: grid;
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--radova-hairline);
+  background: var(--radova-hairline);
+}
+
+.post-grid > li {
+  margin: 0;
+  padding: 0;
+}
+
+.post-row {
+  display: grid;
+  gap: 1px;
+  background: var(--radova-hairline);
+}
+
+@media (min-width: 768px) {
+  .post-row {
+    grid-template-columns: 1.25fr 0.75fr;
+  }
+}
+
+.post-row__main {
+  padding: 1.75rem;
+  background: var(--radova-white);
+}
+
+.post-row__main h3 {
+  margin-top: 0;
+  margin-bottom: 0.65rem;
+  font-family: var(--radova-heading-font);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--radova-navy);
+}
+
+.post-row__main > p {
+  color: var(--radova-muted);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.post-row__kicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.post-row__panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.75rem;
+  background: var(--radova-lavender);
+}
+
+#bootcamp .post-row h3 a::after,
+#certification .post-row h3 a::after {
+  content: none;
+}
+
+#bootcamp .post-row__panel .button,
+#certification .post-row__panel .button {
+  margin-top: 1.25rem;
+  width: 100%;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: var(--radova-muted);
+}
+
+.meta-dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0 1.25rem;
+  margin: 0;
+}
+
+.meta-dl dt,
+.meta-dl dd {
+  margin: 0;
+  padding: 0.55rem 0;
+  border-top: 1px solid var(--radova-hairline);
+  font-size: 0.875rem;
+}
+
+.meta-dl dt:first-of-type,
+.meta-dl dd:first-of-type {
+  border-top: 0;
+}
+
+.meta-dl dt {
+  color: var(--radova-muted);
+}
+
+.meta-dl dd {
+  font-weight: 700;
+  color: var(--radova-navy);
+}
+
+.meta-dl__lead {
+  font-size: 1rem;
+  color: var(--radova-red);
+}
+
+.advisory-id {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* ---------- Certification Exam Domains (CEH Blueprint Style) ---------- */
+.cert-domains {
+  margin-top: 1.25rem;
+  padding: 1.15rem 1.25rem;
+  border-left: 3px solid var(--radova-red);
+  background: var(--radova-lavender);
+}
+
+.cert-domains h4 {
+  font-family: var(--radova-heading-font);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--radova-navy);
+}
+
+.cert-domains ul {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.cert-domains li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9375rem;
+  color: var(--radova-navy);
+}
+
+/* ---------- Registration Box (Bootcamp & Certification) ---------- */
+.registration-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  margin-top: 1.5rem;
+  padding: 1.75rem;
+  border: 1px solid var(--radova-hairline);
+  border-top: 3px solid var(--radova-red);
+  background: var(--radova-white);
+  scroll-margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .registration-box {
+    grid-template-columns: 1fr 1.2fr;
+    padding: 2.25rem;
+  }
+}
+
+.registration-box__info h3 {
+  font-family: var(--radova-heading-font);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: var(--radova-navy);
+}
+
+.registration-box__info p:last-child {
+  margin-bottom: 0;
+  color: var(--radova-muted);
+}
+
+.registration-form {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+}
+
+.registration-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--radova-navy);
+}
+
+.registration-form input,
+.registration-form select {
+  width: 100%;
+  height: 44px;
+  margin: 0;
+  padding-inline: 0.85rem;
+  border: 1px solid var(--radova-hairline);
+  border-radius: 8px;
+  font-family: var(--radova-body-font);
+  font-size: 0.95rem;
+  background-color: var(--radova-lavender);
+  color: var(--radova-navy);
+}
+
+.registration-form input:focus,
+.registration-form select:focus {
+  outline: 2px solid var(--radova-red);
+  border-color: var(--radova-red);
+  background-color: var(--radova-white);
+}
+
+.registration-form .button {
+  margin-top: 0.35rem;
+  width: 100%;
+}
