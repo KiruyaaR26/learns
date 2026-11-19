@@ -63,10 +63,10 @@
   }
 }
 
-/* ---------- Anchor Navigation Tabs (.tab-grid) ---------- */
+/* ---------- Tab Navigation Bar (.tab-grid) ---------- */
 nav.tab-grid {
   display: block;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 nav.tab-grid ul {
@@ -92,61 +92,62 @@ nav.tab-grid ul {
   list-style: none;
 }
 
-.tab-grid a {
+.tab-grid .tab-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 52px;
-  padding: 0.65rem 1rem;
+  width: 100%;
+  min-height: 54px;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border: 0;
   border-bottom: 3px solid transparent;
+  border-radius: 0;
+  box-shadow: none;
+  font-family: var(--radova-body-font);
+  font-size: 1rem;
   font-weight: 700;
-  text-decoration: none;
+  line-height: 1.2;
+  text-align: center;
   color: var(--radova-navy);
   background: var(--radova-lavender);
+  cursor: pointer;
   transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
 }
 
-.tab-grid a:hover,
-.tab-grid a:focus-visible,
-.tab-grid a[aria-current="true"],
-.tab-grid a[aria-current="page"] {
+.tab-grid .tab-btn:hover,
+.tab-grid .tab-btn:focus-visible,
+.tab-grid .tab-btn[aria-selected="true"] {
   color: var(--radova-red);
   background: var(--radova-white);
   border-bottom-color: var(--radova-red);
 }
 
-/* ---------- Section Banner ---------- */
+/* ---------- Tab Panel Switching ---------- */
 .learn-section {
-  margin-top: 3.5rem;
-  scroll-margin-top: 1.5rem;
+  margin-top: 0;
 }
 
-.section-banner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-bottom: 1rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 2px solid var(--radova-navy);
+.tab-panel[hidden] {
+  display: none !important;
 }
 
-.section-banner h2 {
-  margin: 0;
-  font-family: var(--radova-heading-font);
-  font-size: clamp(1.65rem, 3vw, 2.25rem);
-  font-weight: 700;
-  color: var(--radova-navy);
+.tab-panel.is-active {
+  animation: tabPanelFade 180ms ease;
 }
 
-.section-note {
-  margin: 0;
-  font-size: 0.9375rem;
-  color: var(--radova-muted);
+@keyframes tabPanelFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
 /* ---------- Buttons ---------- */
 .button {
   display: inline-flex;
