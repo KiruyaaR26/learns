@@ -1,19 +1,69 @@
 /* ==========================================================================
-   Radova Learns Page Stylesheet (Compatible with site.css & pico.min.css)
+   Radova Learns Page Stylesheet
+   Aligned with Radova Dark Mode Brand Guidelines
    ========================================================================== */
-:root {
-  --radova-navy: #0E0347;
-  --radova-blue: #0B2E8D;
-  --radova-red: #A10000;
-  --radova-red-2: #BB080B;
-  --radova-red-3: #DB000F;
-  --radova-lavender: #F7F6FF;
-  --radova-white: #FFFFFF;
-  --radova-muted: #4A4668;
-  --radova-hairline: rgba(14, 3, 71, 0.14);
+:root,
+[data-theme="light"] {
+  --lr-bg: #F7F6FF;
+  --lr-surface: #FFFFFF;
+  --lr-surface-alt: #F7F6FF;
+  --lr-ink: #0E0347;
+  --lr-muted: #4A4668;
+  --lr-line: rgba(14, 3, 71, 0.14);
+  --lr-border-strong: #0E0347;
+
+  --lr-primary: #A10000;
+  --lr-primary-hover: #BB080B;
+  --lr-primary-active: #DB000F;
+  --lr-accent-red: #A10000;
+  --lr-blue: #0035C6;
+
+  --lr-sec-solid-bg: #0E0347;
+  --lr-sec-solid-ink: #FFFFFF;
+  --lr-sec-solid-hover: #0035C6;
+
+  --lr-outline-bg: transparent;
+  --lr-outline-ink: #0E0347;
+  --lr-outline-border: #0E0347;
+  --lr-outline-hover-bg: #0E0347;
+  --lr-outline-hover-ink: #FFFFFF;
+
+  --lr-badge-soft-bg: rgba(14, 3, 71, 0.08);
+  --lr-badge-soft-ink: #0E0347;
+
   --radova-heading-font: "Roboto", system-ui, -apple-system, sans-serif;
   --radova-body-font: "Lato", system-ui, -apple-system, sans-serif;
   --learns-pad-x: clamp(1.25rem, 4vw, 3.5rem);
+}
+
+[data-theme="dark"] {
+  --lr-bg: #0B0711;
+  --lr-surface: #150B52;
+  --lr-surface-alt: #0E0347;
+  --lr-ink: #FFFFFF;
+  --lr-muted: #C4CBD4;
+  --lr-line: rgba(196, 203, 212, 0.18);
+  --lr-border-strong: rgba(255, 255, 255, 0.25);
+
+  --lr-primary: #A10000;
+  --lr-primary-hover: #BB080B;
+  --lr-primary-active: #DB000F;
+  --lr-accent-red: #DB000F;
+  --lr-blue: #0035C6;
+
+  /* Tombol sekunder putih sesuai showcase Dark Mode */
+  --lr-sec-solid-bg: #FFFFFF;
+  --lr-sec-solid-ink: #0B0711;
+  --lr-sec-solid-hover: #C4CBD4;
+
+  --lr-outline-bg: transparent;
+  --lr-outline-ink: #FFFFFF;
+  --lr-outline-border: #FFFFFF;
+  --lr-outline-hover-bg: #FFFFFF;
+  --lr-outline-hover-ink: #0B0711;
+
+  --lr-badge-soft-bg: rgba(255, 255, 255, 0.12);
+  --lr-badge-soft-ink: #FFFFFF;
 }
 
 .learns-container {
@@ -21,38 +71,42 @@
   margin-inline: auto;
   padding-block: 2.5rem 4rem;
   padding-inline: var(--learns-pad-x);
+  color: var(--lr-ink);
 }
 
-/* ---------- Editorial Header ---------- */
+/* ---------- Editorial Header (Heading 1: 56px) ---------- */
 .editorial-header {
   display: grid;
   gap: 1rem;
   padding-bottom: 1.75rem;
   margin-bottom: 2rem;
-  border-bottom: 2px solid var(--radova-navy);
+  border-bottom: 2px solid var(--lr-border-strong);
 }
 
 .eyebrow {
   margin: 0 0 0.4rem;
-  font-size: 0.875rem;
+  font-family: var(--radova-body-font);
+  font-size: 0.875rem; /* 14px */
   font-weight: 700;
   letter-spacing: 0.04em;
-  color: var(--radova-red);
+  color: var(--lr-accent-red);
 }
 
 .editorial-header h1 {
   margin: 0;
   font-family: var(--radova-heading-font);
-  font-size: clamp(2.15rem, 4.5vw, 3.5rem);
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem); /* max 56px */
   font-weight: 700;
   line-height: 1.12;
-  color: var(--radova-navy);
+  color: var(--lr-ink);
 }
 
 .editorial-header > p {
   margin: 0;
-  font-size: 1.125rem;
-  color: var(--radova-muted);
+  font-family: var(--radova-body-font);
+  font-size: 1.125rem; /* Large Text Regular: 18px */
+  line-height: 1.5;
+  color: var(--lr-muted);
 }
 
 @media (min-width: 768px) {
@@ -76,8 +130,8 @@ nav.tab-grid ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  border: 1px solid var(--radova-hairline);
-  background: var(--radova-hairline);
+  border: 1px solid var(--lr-line);
+  background: var(--lr-line);
 }
 
 @media (min-width: 768px) {
@@ -100,27 +154,37 @@ nav.tab-grid ul {
   width: 100%;
   min-height: 54px;
   margin: 0;
+  padding: 0.75rem 1rem;
   border: 0;
   border-bottom: 3px solid transparent;
   border-radius: 0;
   box-shadow: none;
   font-family: var(--radova-body-font);
-  font-size: 1rem;
+  font-size: 1rem; /* 16px */
   font-weight: 700;
   line-height: 1.2;
   text-align: center;
-  color: var(--radova-navy);
-  background: var(--radova-lavender);
+  color: var(--lr-muted);
+  background: var(--lr-surface-alt);
   cursor: pointer;
   transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
 }
 
 .tab-grid .tab-btn:hover,
-.tab-grid .tab-btn:focus-visible,
+.tab-grid .tab-btn:focus-visible {
+  color: var(--lr-ink);
+  background: var(--lr-surface);
+  border-bottom-color: var(--lr-primary-hover);
+}
+
 .tab-grid .tab-btn[aria-selected="true"] {
-  color: var(--radova-red);
-  background: var(--radova-white);
-  border-bottom-color: var(--radova-red);
+  color: var(--lr-ink);
+  background: var(--lr-surface);
+  border-bottom-color: var(--lr-accent-red);
+}
+
+.tab-grid .tab-btn[aria-selected="true"] i.ph {
+  color: var(--lr-accent-red);
 }
 
 /* ---------- Tab Panel Switching ---------- */
@@ -141,64 +205,98 @@ nav.tab-grid ul {
     opacity: 0;
     transform: translateY(4px);
   }
-  
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-/* ---------- Buttons ---------- */
+
+/* ---------- Section Banner (Heading 2: 48px) ---------- */
+.section-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--lr-border-strong);
+}
+
+.section-banner h2 {
+  margin: 0;
+  font-family: var(--radova-heading-font);
+  font-size: clamp(1.85rem, 3.5vw, 3rem); /* max 48px */
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--lr-ink);
+}
+
+.section-note {
+  margin: 0;
+  font-size: 1rem; /* 16px */
+  color: var(--lr-muted);
+}
+
+/* ---------- Pill Buttons (Sesuai Button Showcase Guideline) ---------- */
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   min-height: 44px;
-  padding: 0.65rem 1.35rem;
-  border: 1.5px solid var(--radova-red);
-  border-radius: 6px;
+  padding: 0.65rem 1.5rem;
+  border: 1.5px solid var(--lr-primary);
+  border-radius: 999px;
   font-family: var(--radova-body-font);
-  font-size: 0.95rem;
+  font-size: 1rem; /* 16px */
   font-weight: 700;
   line-height: 1.2;
   text-decoration: none;
-  color: var(--radova-white);
-  background: var(--radova-red);
+  color: #FFFFFF;
+  background: var(--lr-primary);
   cursor: pointer;
   transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
 }
 
 .button:hover,
 .button:focus-visible {
-  color: var(--radova-white);
-  background: var(--radova-red-2);
-  border-color: var(--radova-red-2);
+  color: #FFFFFF;
+  background: var(--lr-primary-hover);
+  border-color: var(--lr-primary-hover);
 }
 
+.button:active {
+  background: var(--lr-primary-active);
+  border-color: var(--lr-primary-active);
+}
+
+/* Secondary Solid Button (Putih di Dark Mode, Navy di Light Mode) */
 .button--navy {
-  color: var(--radova-white);
-  background: var(--radova-navy);
-  border-color: var(--radova-navy);
+  color: var(--lr-sec-solid-ink);
+  background: var(--lr-sec-solid-bg);
+  border-color: var(--lr-sec-solid-bg);
 }
 
 .button--navy:hover,
 .button--navy:focus-visible {
-  color: var(--radova-white);
-  background: var(--radova-blue);
-  border-color: var(--radova-blue);
+  color: var(--lr-sec-solid-ink);
+  background: var(--lr-sec-solid-hover);
+  border-color: var(--lr-sec-solid-hover);
 }
 
+/* Secondary Outline Button (Outline Putih di Dark Mode, Outline Navy di Light Mode) */
 .button--outline-navy {
-  color: var(--radova-navy);
-  background: var(--radova-white);
-  border-color: var(--radova-navy);
+  color: var(--lr-outline-ink);
+  background: var(--lr-outline-bg);
+  border-color: var(--lr-outline-border);
 }
 
 .button--outline-navy:hover,
 .button--outline-navy:focus-visible {
-  color: var(--radova-white);
-  background: var(--radova-navy);
-  border-color: var(--radova-navy);
+  color: var(--lr-outline-hover-ink);
+  background: var(--lr-outline-hover-bg);
+  border-color: var(--lr-outline-hover-bg);
 }
 
 /* ---------- Badges ---------- */
@@ -206,39 +304,40 @@ nav.tab-grid ul {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.2rem 0.65rem;
+  padding: 0.25rem 0.75rem;
   border-radius: 999px;
-  font-size: 0.8125rem;
+  font-size: 0.875rem; /* 14px */
   font-weight: 700;
-  line-height: 1.35;
-  color: var(--radova-white);
-  background: var(--radova-navy);
+  line-height: 1.3;
+  color: #FFFFFF;
+  background: #0E0347;
 }
 
 .badge--type {
-  background: var(--radova-navy);
+  background: #0E0347;
+  border: 1px solid var(--lr-line);
 }
 
 .badge--severity-critical,
 .badge--severity-high {
-  background: var(--radova-red);
+  background: var(--lr-primary);
 }
 
 .badge--severity-medium,
 .badge--scheduled {
-  background: var(--radova-blue);
+  background: var(--lr-blue);
 }
 
 .badge--severity-low {
-  color: var(--radova-navy);
-  background: #E4E1F7;
+  color: var(--lr-badge-soft-ink);
+  background: var(--lr-badge-soft-bg);
 }
 
 /* ---------- 1. Tutorial (Arch Wiki Index Style) ---------- */
 .wiki-board {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 5px;
+  gap: 1px;
 }
 
 @media (min-width: 768px) {
@@ -249,43 +348,55 @@ nav.tab-grid ul {
 
 .wiki-cell {
   padding: 1.75rem;
-  background: var(--radova-white);
+  background: var(--lr-surface);
 }
 
 .wiki-cell h3 {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.55rem;
   font-family: var(--radova-heading-font);
-  font-size: 1.35rem;
+  font-size: clamp(1.35rem, 2.2vw, 2rem); /* max 32px (Heading 3) */
   font-weight: 700;
+  line-height: 1.25;
   margin-top: 0;
   margin-bottom: 0.5rem;
-  color: var(--radova-navy);
+  color: var(--lr-ink);
 }
 
 .wiki-cell h3 i.ph {
-  color: var(--radova-red);
+  color: var(--lr-accent-red);
 }
 
 .wiki-cell > p {
-  font-size: 0.9375rem;
-  color: var(--radova-muted);
+  font-size: 1rem; /* 16px */
+  color: var(--lr-muted);
   margin-top: 0;
   margin-bottom: 1rem;
+}
+
+.wiki-cell code,
+.course-card code,
+.post-row code {
+  color: var(--lr-ink);
+  background: var(--lr-surface-alt);
+  border: 1px solid var(--lr-line);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
 }
 
 .wiki-links {
   margin: 0;
   padding: 0;
-  border-top: 1px solid var(--radova-hairline);
+  border-top: 1px solid var(--lr-line);
 }
 
 .wiki-links li {
   margin: 0;
   padding: 0;
   list-style: none;
-  border-bottom: 1px solid var(--radova-hairline);
+  border-bottom: 1px solid var(--lr-line);
 }
 
 .wiki-links li:last-child {
@@ -296,22 +407,22 @@ nav.tab-grid ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.6rem 0;
-  font-size: 0.9375rem;
+  padding: 0.65rem 0;
+  font-size: 1rem; /* 16px */
   font-weight: 700;
   text-decoration: none;
-  color: var(--radova-navy);
+  color: var(--lr-ink);
   transition: color 160ms ease, padding-left 160ms ease;
 }
 
 .wiki-links a::after {
   content: "\2192";
-  color: var(--radova-red);
+  color: var(--lr-accent-red);
 }
 
 .wiki-links a:hover,
 .wiki-links a:focus-visible {
-  color: var(--radova-red);
+  color: var(--lr-muted);
   padding-left: 0.35rem;
 }
 
@@ -320,8 +431,8 @@ nav.tab-grid ul {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1px;
-  border: 1px solid var(--radova-hairline);
-  background: var(--radova-hairline);
+  border: 1px solid var(--lr-line);
+  background: var(--lr-line);
 }
 
 @media (min-width: 1024px) {
@@ -336,7 +447,7 @@ nav.tab-grid ul {
   margin: 0;
   padding: 1.75rem;
   border-radius: 0;
-  background: var(--radova-white);
+  background: var(--lr-surface);
 }
 
 .course-card__top {
@@ -349,16 +460,17 @@ nav.tab-grid ul {
 
 .course-card h3 {
   font-family: var(--radova-heading-font);
-  font-size: 1.35rem;
+  font-size: 1.5rem; /* 24px (Heading 4) */
   font-weight: 700;
+  line-height: 1.25;
   margin-top: 0;
   margin-bottom: 0.65rem;
-  color: var(--radova-navy);
+  color: var(--lr-ink);
 }
 
 .course-card > p {
-  font-size: 0.95rem;
-  color: var(--radova-muted);
+  font-size: 1rem; /* 16px */
+  color: var(--lr-muted);
   margin-top: 0;
   margin-bottom: 1.25rem;
 }
@@ -366,7 +478,7 @@ nav.tab-grid ul {
 .course-card .meta-dl {
   margin-top: auto;
   margin-bottom: 1.25rem;
-  border-top: 1px solid var(--radova-hairline);
+  border-top: 1px solid var(--lr-line);
 }
 
 .course-card__footer .button {
@@ -395,26 +507,27 @@ nav.tab-grid ul {
 @media (min-width: 768px) {
   .post-row {
     grid-template-columns: 1.25fr 0.75fr;
-    margin-top: 1rem;
   }
 }
 
 .post-row__main {
   padding: 1.75rem;
-  background: var(--radova-white);
+  background: var(--lr-surface);
 }
 
 .post-row__main h3 {
   margin-top: 0;
   margin-bottom: 0.65rem;
   font-family: var(--radova-heading-font);
-  font-size: 1.45rem;
+  font-size: clamp(1.35rem, 2.2vw, 2rem); /* max 32px (Heading 3) */
   font-weight: 700;
-  color: var(--radova-navy);
+  line-height: 1.25;
+  color: var(--lr-ink);
 }
 
 .post-row__main > p {
-  color: var(--radova-muted);
+  font-size: 1rem; /* 16px */
+  color: var(--lr-muted);
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -432,16 +545,10 @@ nav.tab-grid ul {
   flex-direction: column;
   justify-content: space-between;
   padding: 1.75rem;
-  background: var(--radova-lavender);
+  background: var(--lr-surface-alt);
 }
 
-#bootcamp .post-row h3 a::after,
-#certification .post-row h3 a::after {
-  content: none;
-}
-
-#bootcamp .post-row__panel .button,
-#certification .post-row__panel .button {
+.post-row__panel .button {
   margin-top: 1.25rem;
   width: 100%;
 }
@@ -451,8 +558,8 @@ nav.tab-grid ul {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem 1rem;
-  font-size: 0.875rem;
-  color: var(--radova-muted);
+  font-size: 0.875rem; /* 14px */
+  color: var(--lr-muted);
 }
 
 .meta-dl {
@@ -466,8 +573,8 @@ nav.tab-grid ul {
 .meta-dl dd {
   margin: 0;
   padding: 0.55rem 0;
-  border-top: 1px solid var(--radova-hairline);
-  font-size: 0.875rem;
+  border-top: 1px solid var(--lr-line);
+  font-size: 0.875rem; /* 14px */
 }
 
 .meta-dl dt:first-of-type,
@@ -476,40 +583,40 @@ nav.tab-grid ul {
 }
 
 .meta-dl dt {
-  color: var(--radova-muted);
+  color: var(--lr-muted);
 }
 
 .meta-dl dd {
   font-weight: 700;
-  color: var(--radova-navy);
+  color: var(--lr-ink);
 }
 
 .meta-dl__lead {
-  font-size: 1rem;
-  color: var(--radova-red);
+  font-size: 1.25rem; /* Large Text B: 20px */
+  color: var(--lr-ink);
 }
 
 .advisory-id {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
-/* ---------- Certification Exam Domains (CEH Blueprint Style) ---------- */
+/* ---------- Certification Exam Domains ---------- */
 .cert-domains {
   margin-top: 1.25rem;
   padding: 1.15rem 1.25rem;
-  border-left: 3px solid var(--radova-red);
-  background: var(--radova-lavender);
+  border-left: 3px solid var(--lr-accent-red);
+  background: var(--lr-surface-alt);
 }
 
 .cert-domains h4 {
   font-family: var(--radova-heading-font);
-  font-size: 0.95rem;
+  font-size: 1rem; /* 16px (Heading 6) */
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--radova-navy);
+  color: var(--lr-ink);
 }
 
 .cert-domains ul {
@@ -524,7 +631,11 @@ nav.tab-grid ul {
   padding: 0;
   list-style: none;
   font-size: 0.9375rem;
-  color: var(--radova-navy);
+  color: var(--lr-muted);
+}
+
+.cert-domains li strong {
+  color: var(--lr-ink);
 }
 
 /* ---------- Registration Box (Bootcamp & Certification) ---------- */
@@ -534,9 +645,9 @@ nav.tab-grid ul {
   gap: 1.75rem;
   margin-top: 1.5rem;
   padding: 1.75rem;
-  border: 1px solid var(--radova-hairline);
-  border-top: 3px solid var(--radova-red);
-  background: var(--radova-white);
+  border: 1px solid var(--lr-line);
+  border-top: 3px solid var(--lr-accent-red);
+  background: var(--lr-surface);
   scroll-margin-top: 1.5rem;
 }
 
@@ -549,16 +660,17 @@ nav.tab-grid ul {
 
 .registration-box__info h3 {
   font-family: var(--radova-heading-font);
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* 24px (Heading 4) */
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 0.75rem;
-  color: var(--radova-navy);
+  color: var(--lr-ink);
 }
 
 .registration-box__info p:last-child {
   margin-bottom: 0;
-  color: var(--radova-muted);
+  font-size: 1rem;
+  color: var(--lr-muted);
 }
 
 .registration-form {
@@ -572,9 +684,9 @@ nav.tab-grid ul {
   flex-direction: column;
   gap: 0.35rem;
   margin: 0;
-  font-size: 0.875rem;
+  font-size: 0.875rem; /* 14px */
   font-weight: 700;
-  color: var(--radova-navy);
+  color: var(--lr-ink);
 }
 
 .registration-form input,
@@ -582,20 +694,30 @@ nav.tab-grid ul {
   width: 100%;
   height: 44px;
   margin: 0;
-  padding-inline: 0.85rem;
-  border: 1px solid var(--radova-hairline);
-  border-radius: 8px;
+  padding-inline: 0.95rem;
+  border: 1px solid var(--lr-line);
+  border-radius: 10px;
   font-family: var(--radova-body-font);
-  font-size: 0.95rem;
-  background-color: var(--radova-lavender);
-  color: var(--radova-navy);
+  font-size: 1rem; /* 16px */
+  background-color: var(--lr-surface-alt);
+  color: var(--lr-ink);
+}
+
+[data-theme="dark"] .registration-form input,
+[data-theme="dark"] .registration-form select {
+  color-scheme: dark;
+}
+
+.registration-form input::placeholder {
+  color: var(--lr-muted);
+  opacity: 0.7;
 }
 
 .registration-form input:focus,
 .registration-form select:focus {
-  outline: 2px solid var(--radova-red);
-  border-color: var(--radova-red);
-  background-color: var(--radova-white);
+  outline: 2px solid var(--lr-accent-red);
+  border-color: var(--lr-accent-red);
+  background-color: var(--lr-surface);
 }
 
 .registration-form .button {
