@@ -85,6 +85,7 @@ body {
     radial-gradient(45% 35% at 82% 8%, rgba(219, 0, 15, 0.09), transparent 70%),
     radial-gradient(35% 30% at 15% 18%, rgba(14, 3, 71, 0.04), transparent 70%),
     var(--lr-bg);
+  padding: 50px !important;
 }
 
 [data-theme="dark"] .learns-container {
@@ -923,3 +924,4 @@ nav.tab-grid ul {
     color: #DB000F;
   }
 }
+
